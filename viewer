@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Pushup Tracker</title>
+<style>
+  body {
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #f5f5f5;
+  }
+  .container {
+    display: flex;
+    align-items: center;
+    background-color: #fff;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    position: relative;
+  }
+  .box {
+    text-align: center;
+    width: 150px;
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+  }
+  .lines {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 100%;
+    height: 0;
+    z-index: -1;
+  }
+  .lines::before, .lines::after {
+    content: '';
+    position: absolute;
+    border-top: 2px solid #999;
+  }
+  .lines::before {
+    left: 0;
+    width: 50%;
+    top: 0;
+  }
+  .lines::after {
+    right: 0;
+    width: 50%;
+    top: 0;
+  }
+</style>
+</head>
+<body>
+  <div class="container">
+    <div class="box" id="left">Loading...</div>
+    <div class="box" id="total">Total</div>
+    <div class="lines"></div>
+  </div>
+
+  <script>
+    async function loadData() {
+      try {
+        const url = "https://github.com/owenwlsh/pushup-tracker/blob/main/stats";
+        const res = await fetch(url);
+        const data = await res.json();
+
+        const youtube = data.youtube;
+        const instagram = data.instagram;
+        const tiktok = data.tiktok;
+        const completed = data.completed;
+
+        const total = youtube + instagram + tiktok;
+        const remaining = total - completed;
+
+        document.getElementById('left').textContent = `${completed.toLocaleString()} Done\n${remaining.toLocaleString()} Left`;
+        document.getElementById('total').textContent = `${total.toLocaleString()} Total`;
+      } catch (e) {
+        document.getElementById('left').textContent = 'Error loading data';
+        document.getElementById('total').textContent = '';
+      }
+    }
+
+    loadData();
+    setInterval(loadData, 30000);
+  </script>
+</body>
+</html>
