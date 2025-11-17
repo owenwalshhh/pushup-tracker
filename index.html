@@ -64,7 +64,9 @@
   <script>
     async function loadData() {
       try {
-        const url = "https://owenwlsh.github.io/pushup-tracker/tracker.json";
+        // GitHub Pages URL for stats.json
+        const url = "https://owenwlsh.github.io/pushup-tracker/stats.json";
+
         const res = await fetch(url);
         const data = await res.json();
 
