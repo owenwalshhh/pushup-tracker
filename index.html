@@ -9,16 +9,22 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;600;700;800&display=swap" rel="stylesheet">
   <style>
     :root {
-      --bg: #0a1210;
-      --panel: #0f1916;
-      --panel-soft: #0c1412;
+      --bg: #0b1310;
+      --panel: #101a16;
+      --panel-soft: #0d1612;
       --stroke: #1a2621;
-      --accent: #60f0c8;
-      --accent-2: #9fffe1;
-      --text: #e8f7ef;
+      --accent: #52f0c5;
+      --accent-2: #8affda;
+      --text: #e9f8f1;
       --muted: #9ab8aa;
-      --glow: 0 18px 46px rgba(96, 240, 200, 0.16);
-      --grid-line: rgba(255,255,255,0.06);
+      --glow: 0 18px 46px rgba(82, 240, 197, 0.16);
+      --bg: #0b1021;
+      --card: rgba(255, 255, 255, 0.04);
+      --accent: #56c8ff;
+      --accent-2: #ff8f5a;
+      --text: #e8f0ff;
+      --muted: #9fb3c8;
+      --glow: 0 20px 50px rgba(86, 200, 255, 0.2);
     }
 
     * { box-sizing: border-box; }
@@ -46,22 +52,21 @@
       position: absolute;
       inset: 0;
       background:
-        radial-gradient(circle at 20% 30%, rgba(96, 240, 200, 0.14), transparent 30%),
-        radial-gradient(circle at 80% 70%, rgba(96, 240, 200, 0.1), transparent 32%),
-        repeating-linear-gradient(0deg, var(--grid-line) 0, var(--grid-line) 1px, transparent 1px, transparent 46px),
-        repeating-linear-gradient(90deg, var(--grid-line) 0, var(--grid-line) 1px, transparent 1px, transparent 46px);
+        radial-gradient(circle at center, rgba(82, 240, 197, 0.12) 0, transparent 34%),
+        repeating-linear-gradient(0deg, rgba(255,255,255,0.05) 0, rgba(255,255,255,0.05) 1px, transparent 1px, transparent 44px),
+        repeating-linear-gradient(90deg, rgba(255,255,255,0.05) 0, rgba(255,255,255,0.05) 1px, transparent 1px, transparent 44px);
       mix-blend-mode: screen;
-      opacity: 0.26;
+      opacity: 0.22;
       transform: translate3d(0,0,0);
-      transition: transform 200ms ease;
+      transition: transform 220ms ease;
     }
 
     .shell {
       position: relative;
       z-index: 1;
-      max-width: 1020px;
+      max-width: 980px;
       margin: 0 auto;
-      padding: 48px 20px 70px;
+      padding: 46px 18px 60px;
       display: grid;
       gap: 22px;
     }
@@ -74,8 +79,8 @@
       flex-wrap: wrap;
     }
 
-    h1 { margin: 0; font-size: clamp(30px, 4vw, 36px); letter-spacing: -0.02em; }
-    .lede { margin: 6px 0 0; color: var(--muted); max-width: 620px; line-height: 1.5; }
+    h1 { margin: 0; font-size: clamp(28px, 4vw, 34px); letter-spacing: -0.02em; }
+    .lede { margin: 6px 0 0; color: var(--muted); max-width: 520px; line-height: 1.5; }
 
     .pill {
       display: inline-flex;
@@ -83,7 +88,7 @@
       gap: 8px;
       padding: 9px 12px;
       border-radius: 14px;
-      background: linear-gradient(120deg, rgba(96, 240, 200, 0.14), rgba(96, 240, 200, 0.04));
+      background: var(--panel);
       border: 1px solid var(--stroke);
       color: var(--muted);
       font-size: 13px;
@@ -91,7 +96,7 @@
     }
 
     .card {
-      background: linear-gradient(160deg, rgba(255,255,255,0.03), rgba(255,255,255,0.01));
+      background: linear-gradient(150deg, var(--panel), var(--panel-soft));
       border: 1px solid var(--stroke);
       border-radius: 18px;
       padding: 18px;
@@ -106,7 +111,7 @@
       padding: 12px 14px;
       border-radius: 14px;
       background: rgba(255, 255, 255, 0.02);
-      border: 1px dashed var(--stroke);
+      border: 1px solid var(--stroke);
       display: grid;
       gap: 4px;
     }
@@ -118,7 +123,7 @@
     .progress-ring { position: relative; width: 100%; aspect-ratio: 1; display: grid; place-items: center; }
     .progress-ring svg { width: 100%; height: 100%; }
     .progress-bg circle { stroke: rgba(255, 255, 255, 0.08); }
-    .progress-fg { filter: drop-shadow(0 0 8px rgba(96, 240, 200, 0.55)); }
+    .progress-fg { filter: drop-shadow(0 0 8px rgba(82, 240, 197, 0.55)); }
     .progress-number { position: absolute; display: grid; gap: 6px; text-align: center; }
     .progress-number .total { font-size: clamp(26px, 4vw, 32px); font-weight: 800; }
     .progress-number .label { color: var(--muted); font-size: 13px; }
@@ -126,14 +131,14 @@
 
     .supporters { display: flex; gap: 12px; align-items: center; flex-wrap: wrap; }
     .chip {
-      background: rgba(96, 240, 200, 0.14);
-      color: #d3ffef;
+      background: rgba(82, 240, 197, 0.12);
+      color: #c6ffee;
       border-radius: 999px;
       padding: 8px 12px;
-      border: 1px solid rgba(96, 240, 200, 0.32);
+      border: 1px solid rgba(82, 240, 197, 0.3);
       font-weight: 700;
       letter-spacing: 0.01em;
-      box-shadow: 0 10px 24px rgba(96, 240, 200, 0.12);
+      box-shadow: 0 10px 24px rgba(82, 240, 197, 0.12);
     }
 
     .support-card {
@@ -147,7 +152,7 @@
       border: 1px solid var(--stroke);
       transition: transform 160ms ease, border-color 160ms ease, background 160ms ease;
     }
-    .support-card:hover { transform: translateY(-2px); border-color: rgba(96, 240, 200, 0.5); background: rgba(255, 255, 255, 0.04); }
+    .support-card:hover { transform: translateY(-2px); border-color: rgba(82, 240, 197, 0.5); background: rgba(255, 255, 255, 0.03); }
     .support-name { margin: 0; font-size: 15px; letter-spacing: 0.02em; }
     .support-count { font-weight: 800; font-size: 22px; color: var(--accent); }
     .support-label { color: var(--muted); font-size: 13px; }
@@ -155,7 +160,7 @@
     .notice { margin-top: 6px; color: var(--muted); font-size: 13px; display: flex; align-items: center; gap: 8px; }
 
     .btn {
-      background: linear-gradient(120deg, var(--accent), var(--accent-2));
+      background: var(--accent);
       color: #043427;
       border: none;
       padding: 10px 14px;
@@ -164,26 +169,26 @@
       letter-spacing: 0.02em;
       cursor: pointer;
       transition: transform 140ms ease, box-shadow 140ms ease;
-      box-shadow: 0 10px 24px rgba(96, 240, 200, 0.2);
+      box-shadow: 0 10px 24px rgba(82, 240, 197, 0.2);
     }
-    .btn:hover { transform: translateY(-1px); box-shadow: 0 12px 30px rgba(96, 240, 200, 0.3); }
+    .btn:hover { transform: translateY(-1px); box-shadow: 0 12px 30px rgba(82, 240, 197, 0.32); }
 
     footer { display: flex; align-items: center; gap: 12px; color: var(--muted); font-size: 13px; flex-wrap: wrap; }
     footer a { color: var(--accent); text-decoration: none; font-weight: 700; }
     footer a:hover { color: #c1ffe6; }
 
     /* Loader */
-      .loader {
-        position: fixed;
-        inset: 0;
-        background: radial-gradient(circle at 18% 24%, rgba(96, 240, 200, 0.12), transparent 34%),
-          radial-gradient(circle at 78% 72%, rgba(96, 240, 200, 0.1), transparent 38%),
-          linear-gradient(160deg, #0f1915, #0a1210);
-        display: grid;
-        place-items: center;
-        z-index: 5;
-        transition: opacity 260ms ease, visibility 260ms ease;
-      }
+    .loader {
+      position: fixed;
+      inset: 0;
+      background: radial-gradient(circle at 20% 20%, rgba(82, 240, 197, 0.14), transparent 38%),
+        radial-gradient(circle at 80% 70%, rgba(82, 240, 197, 0.1), transparent 40%),
+        linear-gradient(160deg, #0f1915, #0b1310);
+      display: grid;
+      place-items: center;
+      z-index: 5;
+      transition: opacity 260ms ease, visibility 260ms ease;
+    }
     .loader.hidden { opacity: 0; visibility: hidden; }
 
     .loader-card {
@@ -225,21 +230,361 @@
     @media (max-width: 720px) {
       header { align-items: flex-start; }
       .supporters { flex-direction: column; align-items: flex-start; }
+      background: radial-gradient(circle at 10% 10%, rgba(86, 200, 255, 0.1), transparent 30%),
+                  radial-gradient(circle at 90% 20%, rgba(255, 143, 90, 0.08), transparent 35%),
+                  radial-gradient(circle at 40% 80%, rgba(86, 200, 255, 0.07), transparent 35%),
+                  var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 32px;
+      overflow-x: hidden;
+    }
+
+    .app-shell {
+      width: min(1100px, 100%);
+      display: grid;
+      gap: 28px;
+      position: relative;
+    }
+
+    .hero {
+      background: var(--card);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 18px;
+      padding: 24px 24px 20px;
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      box-shadow: var(--glow);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: -120px -160px auto auto;
+      width: 240px;
+      height: 240px;
+      background: radial-gradient(circle, rgba(86,200,255,0.12), transparent 60%);
+      filter: blur(20px);
+      opacity: 0.8;
+    }
+
+    .badge {
+      background: rgba(86, 200, 255, 0.1);
+      color: #b5e5ff;
+      padding: 6px 12px;
+      border-radius: 999px;
+      font-size: 12px;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      border: 1px solid rgba(86, 200, 255, 0.2);
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .hero h1 {
+      margin: 6px 0;
+      font-weight: 800;
+      font-size: clamp(28px, 4vw, 36px);
+      letter-spacing: -0.02em;
+    }
+
+    .hero p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 15px;
+      line-height: 1.5;
+    }
+
+    .content-grid {
+      display: grid;
+      grid-template-columns: 2fr 1.2fr;
+      gap: 20px;
+    }
+
+    .card {
+      background: var(--card);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 18px;
+      padding: 20px;
+      backdrop-filter: blur(8px);
+      box-shadow: var(--glow);
+    }
+
+    .main-panel {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      gap: 16px;
+      align-items: stretch;
+    }
+
+    .stat-block {
+      background: linear-gradient(135deg, rgba(86,200,255,0.08), rgba(255,255,255,0.02));
+      border-radius: 16px;
+      padding: 18px;
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .stat-title {
+      color: var(--muted);
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 8px;
+    }
+
+    .stat-value {
+      font-size: 34px;
+      font-weight: 800;
+      letter-spacing: -0.01em;
+    }
+
+    .stat-sub {
+      color: var(--muted);
+      font-size: 14px;
+      margin-top: 6px;
+    }
+
+    .progress-ring {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 1;
+      display: grid;
+      place-items: center;
+      isolation: isolate;
+    }
+
+    .progress-ring svg {
+      width: 100%;
+      height: 100%;
+    }
+
+    .progress-bg circle { stroke: rgba(255, 255, 255, 0.08); }
+    .progress-fg { filter: drop-shadow(0 0 14px rgba(86, 200, 255, 0.6)); }
+
+    .progress-number {
+      position: absolute;
+      text-align: center;
+      display: grid;
+      gap: 6px;
+    }
+
+    .progress-number .total {
+      font-size: clamp(28px, 4vw, 34px);
+      font-weight: 800;
+    }
+
+    .progress-number .label { color: var(--muted); font-size: 13px; }
+    .progress-number .percent { color: #b5e5ff; font-weight: 700; letter-spacing: 0.05em; }
+
+    .social-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 12px;
+    }
+
+    .social-card {
+      background: linear-gradient(145deg, rgba(255,255,255,0.03), rgba(86,200,255,0.06));
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 14px;
+      padding: 14px 16px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      transition: transform 220ms ease, border-color 220ms ease;
+    }
+
+    .social-card:hover { transform: translateY(-4px); border-color: rgba(86, 200, 255, 0.4); }
+
+    .icon-bubble {
+      width: 44px; height: 44px;
+      border-radius: 12px;
+      display: grid; place-items: center;
+      background: rgba(255, 255, 255, 0.06);
+      color: #fff;
+      font-weight: 700;
+      font-size: 18px;
+      text-transform: uppercase;
+      letter-spacing: 0.02em;
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1);
+    }
+
+    .social-info { flex: 1; }
+    .social-info h3 { margin: 0; font-size: 15px; letter-spacing: 0.02em; }
+    .social-info p { margin: 4px 0 0; color: var(--muted); font-size: 13px; }
+    .social-value { font-weight: 800; font-size: 22px; }
+
+    .figure-card {
+      position: relative;
+      overflow: hidden;
+      background: linear-gradient(160deg, rgba(86,200,255,0.06), rgba(255,255,255,0.03));
+    }
+
+    .wireframe {
+      width: 180px;
+      margin: 0 auto;
+      position: relative;
+      aspect-ratio: 1;
+      cursor: pointer;
+      display: grid;
+      place-items: center;
+    }
+
+    .wireframe .body {
+      position: relative;
+      width: 140px;
+      height: 80px;
+      transform-origin: 100% 100%;
+      transition: transform 180ms ease;
+    }
+
+    .wireframe .segment {
+      position: absolute;
+      background: rgba(86, 200, 255, 0.85);
+      border-radius: 999px;
+      box-shadow: 0 0 8px rgba(86, 200, 255, 0.6);
+    }
+
+    .seg-head { width: 26px; height: 26px; border-radius: 50%; top: -20px; left: 12px; }
+    .seg-torso { width: 60px; height: 10px; top: 20px; left: 18px; }
+    .seg-arm-left { width: 48px; height: 8px; top: 24px; left: -22px; transform-origin: 100% 50%; rotate: -15deg; }
+    .seg-arm-right { width: 48px; height: 8px; top: 24px; left: 66px; transform-origin: 0% 50%; rotate: 15deg; }
+    .seg-leg-left { width: 60px; height: 8px; top: 60px; left: 6px; transform-origin: 100% 50%; }
+    .seg-leg-right { width: 60px; height: 8px; top: 60px; left: 62px; transform-origin: 0% 50%; }
+
+    .wireframe .ground {
+      position: absolute;
+      width: 130%;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.25), transparent);
+      bottom: 12px;
+      left: -15%;
+    }
+
+    .wireframe.active .body {
+      animation: pushup 1.2s ease-in-out 1;
+    }
+
+    @keyframes pushup {
+      0% { transform: rotate(0deg) translateY(0); }
+      45% { transform: rotate(-12deg) translateY(4px); }
+      65% { transform: rotate(-16deg) translateY(8px); }
+      100% { transform: rotate(0deg) translateY(0); }
+    }
+
+    .wireframe:hover .body { transform: translateY(-4px); }
+
+    .footer-links {
+      display: flex;
+      gap: 18px;
+      align-items: center;
+      flex-wrap: wrap;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .footer-links a {
+      color: #b5e5ff;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .footer-links a:hover { color: #ffffff; }
+
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 12px;
+      border-radius: 12px;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.08);
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    /* Intro overlay */
+    .intro {
+      position: fixed;
+      inset: 0;
+      background: radial-gradient(circle at 20% 20%, rgba(86,200,255,0.15), transparent 40%),
+                  radial-gradient(circle at 80% 30%, rgba(255,143,90,0.15), transparent 35%),
+                  #040714;
+      display: grid;
+      place-items: center;
+      z-index: 10;
+      color: #fff;
+      text-align: center;
+      transition: opacity 400ms ease, visibility 400ms ease;
+    }
+
+    .intro.hidden { opacity: 0; visibility: hidden; }
+
+    .intro-card {
+      padding: 38px 42px;
+      border-radius: 18px;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.1);
+      box-shadow: var(--glow);
+      display: grid;
+      gap: 14px;
+      max-width: 520px;
+    }
+
+    .intro h2 {
+      margin: 0;
+      font-size: 32px;
+      letter-spacing: -0.02em;
+    }
+
+    .intro p {
+      margin: 0;
+      color: #c9d7ff;
+      line-height: 1.6;
+    }
+
+    .intro button {
+      background: linear-gradient(120deg, var(--accent), var(--accent-2));
+      color: #0b1021;
+      border: none;
+      padding: 12px 18px;
+      border-radius: 12px;
+      font-weight: 800;
+      cursor: pointer;
+      letter-spacing: 0.04em;
+      box-shadow: 0 12px 24px rgba(86,200,255,0.25);
+      transition: transform 160ms ease, box-shadow 160ms ease;
+    }
+
+    .intro button:hover { transform: translateY(-2px); box-shadow: 0 16px 32px rgba(86,200,255,0.35); }
+
+    @media (max-width: 960px) {
+      .content-grid { grid-template-columns: 1fr; }
+      .main-panel { grid-template-columns: 1fr; }
+      body { padding: 20px; }
     }
   </style>
 </head>
 <body>
-    <div class="loader" id="loader" aria-live="polite">
-      <div class="loader-card">
-        <div class="loader-gif" aria-hidden="true"></div>
-        <div style="display:grid; gap:4px;">
-          <strong>Pushup Tracker</strong>
-          <span style="color: var(--muted);">Pulling the latest manual snapshot…</span>
-        </div>
-        <div class="bar" aria-hidden="true"><span class="bar-fill"></span></div>
-        <div class="notice" style="justify-content:center;">Updated manually once per day</div>
+  <div class="loader" id="loader" aria-live="polite">
+    <div class="loader-card">
+      <div class="loader-gif" aria-hidden="true"></div>
+      <div style="display:grid; gap:4px;">
+        <strong>Pushup Tracker</strong>
+        <span style="color: var(--muted);">Loading today\'s numbers…</span>
       </div>
+      <div class="bar" aria-hidden="true"><span class="bar-fill"></span></div>
+      <div class="notice" style="justify-content:center;">Manual update daily</div>
     </div>
+  </div>
 
   <div class="background">
     <canvas id="particle-canvas"></canvas>
@@ -247,20 +592,20 @@
   </div>
 
   <main class="shell">
-      <header>
-        <div>
-          <h1>Pushup Tracker</h1>
-          <p class="lede">A simple mint-on-dark snapshot of today\'s pushups and supporters. Updates happen manually each day, not live.</p>
-        </div>
-        <div class="pill">Manual update • once per day</div>
-      </header>
+    <header>
+      <div>
+        <h1>Pushup Tracker</h1>
+        <p class="lede">Calm mint-on-dark visuals, a quick load card, and a focus on the reps that match the community.</p>
+      </div>
+      <div class="pill">Updated manually daily</div>
+    </header>
 
     <section class="card">
-        <div class="supporters" aria-live="polite">
-          <span class="chip" id="percent-text">0% complete</span>
-          <div class="notice">Last manual sync: <span id="last-updated">just now</span></div>
-          <button class="btn" id="refresh">Refresh numbers</button>
-        </div>
+      <div class="supporters">
+        <span class="chip" id="percent-text">0% complete</span>
+        <div class="notice">Last sync: <span id="last-updated">just now</span></div>
+        <button class="btn" id="refresh">Refresh numbers</button>
+      </div>
 
       <div class="grid two" style="margin-top:12px; align-items:center;">
         <div class="progress-ring">
@@ -272,14 +617,14 @@
               <circle id="progress-ring" cx="80" cy="80" r="70" stroke-width="10" fill="none" stroke="url(#grad)" stroke-linecap="round" stroke-dasharray="440" stroke-dashoffset="440" />
               <defs>
                 <linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="100%">
-                  <stop offset="0%" stop-color="#60f0c8" />
-                  <stop offset="100%" stop-color="#9fffe1" />
+                  <stop offset="0%" stop-color="#52f0c5" />
+                  <stop offset="100%" stop-color="#8affda" />
                 </linearGradient>
               </defs>
             </g>
           </svg>
           <div class="progress-number">
-            <div class="label">Pushups logged</div>
+            <div class="label">Total goal</div>
             <div class="total" id="total-number">0</div>
             <div class="percent" id="percent-inline">0%</div>
           </div>
@@ -287,22 +632,20 @@
 
         <div class="grid three">
           <div class="stat">
-            <div class="stat-title">Goal</div>
-            <div class="stat-value" id="goal-count">0</div>
-            <div class="stat-sub">Target pushups.</div>
-          </div>
-          <div class="stat">
             <div class="stat-title">Completed</div>
             <div class="stat-value" id="completed-count">0</div>
-            <div class="stat-sub">Reps already done.</div>
+            <div class="stat-sub">Reps already down.</div>
           </div>
           <div class="stat">
             <div class="stat-title">Remaining</div>
             <div class="stat-value" id="remaining-count">0</div>
-            <div class="stat-sub">Reps left for the goal.</div>
+            <div class="stat-sub">Reps to go.</div>
+          </div>
+          <div class="stat">
+            <div class="stat-title">Daily note</div>
+            <div class="stat-sub">Manual update every day.</div>
           </div>
         </div>
-        <div class="notice">Numbers refresh from <code>stats.json</code> manually each day.</div>
       </div>
     </section>
 
@@ -354,11 +697,136 @@
 
     function animateValue(el, start, end, duration = 600) {
       if (!el) return;
+  <div class="intro" id="intro">
+    <div class="intro-card">
+      <div class="badge">Daily Mission</div>
+      <h2>Pushup Tracker</h2>
+      <p>One rep for every supporter. Tap in to see the live totals and knock out a pushup with the wireframe spotter.</p>
+      <button id="enter">Enter</button>
+    </div>
+  </div>
+
+  <div class="app-shell">
+    <section class="hero">
+      <div>
+        <div class="badge">1 pushup for every follower</div>
+        <h1>Keep pace with the community</h1>
+        <p>Numbers update on the fly so you can see exactly how many reps remain. Click the wireframe buddy to drop for a quick pushup.</p>
+      </div>
+    </section>
+
+    <section class="content-grid">
+      <div class="card">
+        <div class="main-panel">
+          <div class="stat-block">
+            <div class="stat-title">Completed</div>
+            <div class="stat-value" id="completed-count">0</div>
+            <div class="stat-sub">Reps already crushed.</div>
+          </div>
+          <div class="stat-block">
+            <div class="stat-title">Remaining</div>
+            <div class="stat-value" id="remaining-count">0</div>
+            <div class="stat-sub">Reps still on the board.</div>
+          </div>
+        </div>
+        <div class="main-panel" style="margin-top: 12px; align-items: center;">
+          <div class="progress-ring">
+            <svg viewBox="0 0 160 160">
+              <g class="progress-bg">
+                <circle cx="80" cy="80" r="70" stroke-width="10" fill="none" />
+              </g>
+              <g class="progress-fg">
+                <circle id="progress-ring" cx="80" cy="80" r="70" stroke-width="10" fill="none" stroke="url(#grad)" stroke-linecap="round" stroke-dasharray="440" stroke-dashoffset="440" />
+                <defs>
+                  <linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stop-color="#56c8ff" />
+                    <stop offset="100%" stop-color="#ff8f5a" />
+                  </linearGradient>
+                </defs>
+              </g>
+            </svg>
+            <div class="progress-number">
+              <div class="label">Total</div>
+              <div class="total" id="total-number">0</div>
+              <div class="percent" id="percent-text">0%</div>
+            </div>
+          </div>
+          <div class="stat-block figure-card" aria-label="wireframe pushup figure" tabindex="0" id="figure-card">
+            <div class="stat-title">Tap to demo</div>
+            <div class="wireframe" id="wireframe" role="button" aria-pressed="false">
+              <div class="body">
+                <span class="segment seg-head"></span>
+                <span class="segment seg-torso"></span>
+                <span class="segment seg-arm-left"></span>
+                <span class="segment seg-arm-right"></span>
+                <span class="segment seg-leg-left"></span>
+                <span class="segment seg-leg-right"></span>
+              </div>
+              <div class="ground"></div>
+            </div>
+            <div class="stat-sub">Wireframe buddy will perform one clean pushup.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="stat-title">Community Totals</div>
+        <div class="social-grid" id="social-grid">
+          <div class="social-card">
+            <div class="icon-bubble">YT</div>
+            <div class="social-info">
+              <h3>YouTube</h3>
+              <p><span class="social-value" id="youtube-count">0</span> supporters</p>
+            </div>
+          </div>
+          <div class="social-card">
+            <div class="icon-bubble">IG</div>
+            <div class="social-info">
+              <h3>Instagram</h3>
+              <p><span class="social-value" id="instagram-count">0</span> supporters</p>
+            </div>
+          </div>
+          <div class="social-card">
+            <div class="icon-bubble">TT</div>
+            <div class="social-info">
+              <h3>TikTok</h3>
+              <p><span class="social-value" id="tiktok-count">0</span> supporters</p>
+            </div>
+          </div>
+          <div class="social-card">
+            <div class="icon-bubble">X</div>
+            <div class="social-info">
+              <h3>Twitter</h3>
+              <p><span class="social-value" id="twitter-count">0</span> supporters</p>
+            </div>
+          </div>
+        </div>
+        <div style="margin-top: 14px; display: flex; align-items: center; gap: 12px; flex-wrap: wrap;">
+          <div class="pill">Auto-refreshes every minute.</div>
+          <div class="pill" id="last-updated">Last updated just now.</div>
+        </div>
+      </div>
+    </section>
+
+    <div class="footer-links">
+      <span>Follow along:</span>
+      <a href="https://instagram.com/owenwlsh" target="_blank" rel="noreferrer">Instagram</a>
+      <a href="https://tiktok.com/@owenwlsh" target="_blank" rel="noreferrer">TikTok</a>
+      <a href="https://youtube.com/@owenwlsh" target="_blank" rel="noreferrer">YouTube</a>
+      <a href="https://twitter.com/owenwlsh" target="_blank" rel="noreferrer">Twitter</a>
+    </div>
+  </div>
+
+  <script>
+    const formatNumber = (num) => num.toLocaleString('en-US');
+
+    function animateValue(element, start, end, duration = 650) {
       const startTime = performance.now();
       const step = (now) => {
         const progress = Math.min((now - startTime) / duration, 1);
         const value = Math.round(start + (end - start) * progress);
         el.textContent = formatNumber(value);
+        element.textContent = formatNumber(value);
         if (progress < 1) requestAnimationFrame(step);
       };
       requestAnimationFrame(step);
@@ -366,27 +834,33 @@
 
     async function fetchStats() {
       const response = await fetch('./stats.json', { cache: 'no-cache' });
+      const source = './stats.json';
+      const response = await fetch(source, { cache: 'no-cache' });
       if (!response.ok) throw new Error('Failed to fetch stats');
       return response.json();
     }
 
-    const DEFAULT_GOAL = 2000;
-    const state = { completed: 0, remaining: 0, total: 0, percent: 0, goal: DEFAULT_GOAL };
+    const state = { completed: 0, remaining: 0, total: 0, percent: 0 };
+    const state = {
+      completed: 0,
+      remaining: 0,
+      total: 0,
+      percent: 0,
+    };
 
     function updateUI(data) {
-      const { youtube = 0, instagram = 0, tiktok = 0, twitter = 0, completed = 0 } = data;
-      const goal = data.goal ?? state.goal ?? DEFAULT_GOAL;
-      const total = goal;
-      const remaining = Math.max(goal - completed, 0);
-      const percent = goal === 0 ? 0 : Math.round((completed / goal) * 100);
+      const { youtube, instagram, tiktok, twitter, completed } = data;
+      const total = youtube + instagram + tiktok + twitter;
+      const remaining = Math.max(total - completed, 0);
+      const percent = total === 0 ? 0 : Math.round((completed / total) * 100);
 
       animateValue(document.getElementById('completed-count'), state.completed, completed);
       animateValue(document.getElementById('remaining-count'), state.remaining, remaining);
-      animateValue(document.getElementById('total-number'), state.completed, completed);
-      animateValue(document.getElementById('goal-count'), state.goal, goal);
+      animateValue(document.getElementById('total-number'), state.total, total);
 
       document.getElementById('percent-text').textContent = `${percent}% complete`;
       document.getElementById('percent-inline').textContent = `${percent}%`;
+      document.getElementById('percent-text').textContent = `${percent}%`;
       document.getElementById('youtube-count').textContent = formatNumber(youtube);
       document.getElementById('instagram-count').textContent = formatNumber(instagram);
       document.getElementById('tiktok-count').textContent = formatNumber(tiktok);
@@ -402,11 +876,11 @@
       state.remaining = remaining;
       state.total = total;
       state.percent = percent;
-      state.goal = goal;
 
       const now = new Date();
       const options = { month: 'short', day: 'numeric', hour: '2-digit', minute: '2-digit' };
       document.getElementById('last-updated').textContent = now.toLocaleString([], options);
+      document.getElementById('last-updated').textContent = `Last updated ${new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}`;
     }
 
     async function loadData() {
@@ -420,6 +894,7 @@
       } finally {
         setTimeout(() => loader.classList.add('hidden'), 550);
       }
+      tick();
     }
 
     function setupRefresh() {
@@ -471,10 +946,11 @@
           const y = p.y * canvas.height + pointer.y * 10;
           ctx.beginPath();
           ctx.arc(x, y, p.r, 0, Math.PI * 2);
-          ctx.fillStyle = 'rgba(96, 240, 200, 0.55)';
+          ctx.fillStyle = 'rgba(82, 240, 197, 0.55)';
           ctx.fill();
         });
         requestAnimationFrame(tick);
+        document.getElementById('last-updated').textContent = 'Unable to refresh stats right now.';
       }
       tick();
     }
@@ -483,6 +959,33 @@
       setupBackground();
       setupRefresh();
       loadData();
+    function handleWireframe() {
+      const frame = document.getElementById('wireframe');
+      const card = document.getElementById('figure-card');
+      const trigger = () => {
+        frame.classList.remove('active');
+        void frame.offsetWidth;
+        frame.classList.add('active');
+        frame.setAttribute('aria-pressed', 'true');
+        setTimeout(() => frame.setAttribute('aria-pressed', 'false'), 1200);
+      };
+      frame.addEventListener('click', trigger);
+      card.addEventListener('keypress', (e) => { if (e.key === 'Enter' || e.key === ' ') trigger(); });
+    }
+
+    function setupIntro() {
+      const intro = document.getElementById('intro');
+      const btn = document.getElementById('enter');
+      const close = () => intro.classList.add('hidden');
+      btn.addEventListener('click', close);
+      setTimeout(close, 3200);
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      setupIntro();
+      handleWireframe();
+      loadData();
+      setInterval(loadData, 60000);
     });
   </script>
 </body>
